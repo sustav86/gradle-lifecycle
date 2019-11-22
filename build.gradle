@@ -1,0 +1,38 @@
+defaultTasks "hello"
+
+logger.info  "build.gradle --> This is executed during the execution phase"
+logger.info ">>> build.gradle --> ${project.gradle.gradleVersion}"
+logger.info ">>> build.gradle --> ${project.gradle.gradleHomeDir}"
+logger.info ">>> build.gradle --> ${project.gradle.gradleUserHomeDir}"
+logger.info ">>> build.gradle --> ${relativePath(buildFile)}"
+if (project.hasProperty("gradlePropertiesProp")) {
+    logger.info ">>> property value is $gradlePropertiesProp"
+} else {
+    logger.info ">>> NOP"
+}
+project.ext.sayHello = "Helllloooooppp"
+logger.info sayHello
+logger.info gradle.timestamp()
+
+task hi
+
+project.hi.doLast {
+    logger.info "Working task"
+}
+
+task hello {
+    description = "Description task hello"
+    group = "Group of task hello"
+
+    doFirst {
+        logger.info "Do First"
+    }
+
+    doLast {
+        logger.info "Do Last"
+    }
+}
+
+logger.info hello.description
+logger.info hello.group
+
