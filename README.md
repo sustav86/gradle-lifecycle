@@ -5,3 +5,7 @@
 ![element_collection](img/gradle_tasks.png)
 ![element_collection](img/gradle_tasks_2.png)
 ![element_collection](img/gradle_tasks_3.png)
+![element_collection](img/gradle_plugins.png)
+![element_collection](img/gradle_plugins_2.png)
+![element_collection](img/gradle_transitive.png)
+![element_collection](img/gradle_multiproject.png)
